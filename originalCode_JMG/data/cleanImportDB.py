@@ -2,25 +2,24 @@
 
 
 import networkx as nx
-from py2neo import Graph, Node, Relationship
+from py2neo import Graph, Node
 import pandas as pd
-import random
 from neo4j import GraphDatabase, basic_auth
-import matplotlib
+import sys
+from cleanImportProcedures import importGexfNodesAndRel
+from cleanImportProcedures import importMondeDiploFiles
+from cleanImportProcedures import importEntityWebsiteRelForDiplo, importACPM_SiteGP, importACPM_SitePro
 
+
+# defining 'global' variables
 graph = Graph("bolt://localhost:7687", auth=("neo4j", "Password"))
 driver = GraphDatabase.driver('bolt://localhost', auth=basic_auth("neo4j", "Password"))
 db = driver.session()
-
-import sys
-
 dataPath = 'C:\\Users\\Jo\\Documents\\Tech\\Atom_prj\\MyMedia-FillDB\\data'
 if dataPath not in sys.path:
     sys.path.insert(0, dataPath)
 
-from cleanImportProcedures import importGexfNodesAndRel
-from cleanImportProcedures import importMondeDiploFiles
-from cleanImportProcedures import importEntityWebsiteRelForDiplo, importACPM_SiteGP, importACPM_SitePro
+
 
 # Import Hyphe D0 DISCO
 gexfD0DISCO = "C:\\Users\\Jo\\Documents\\Tech\\Atom_prj\\MyMedia-FillDB\\data\\HypheExport20200520\\202005Websites01_D0_DISCO.gexf"
