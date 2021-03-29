@@ -454,8 +454,8 @@ def get_search():
 
 @app.route("/media/<site_name>")
 def get_media(site_name):
-    typeList = ["Website", "Twitter", "Youtube", "Wikipedia", "Entity", "Linkedin"]
-    for x in typeList:
+    type_list = ["Website", "Twitter", "Youtube", "Wikipedia", "Entity", "Linkedin"]
+    for x in type_list:
         if len(site_name.split(x)) > 1:
             nodename = site_name.split(x)[0]
             nodetype = x
@@ -518,7 +518,6 @@ for x in typeList:
     if len(site_name.split(x)) > 1:
         print(x, site_name.split(x)[0], site_name.split(x)[1])
 
-q
 results = db.run("MATCH (w) "
                  "WHERE w.site_name =~ $site_name "
                  "RETURN w LIMIT 10", {"site_name": "(?i).*" + q + ".*"}
