@@ -3,7 +3,7 @@
 Code original de JMG (un peu d'indulgence, code très très moche mais qui fonctionne ;-) ) 
 
 L'app Validalab est constituée de :
-- une base Neo4j (dump [téléchargeable ici](https://drive.google.com/file/d/1dvVjihTrB6HaVhXrtKuMBXLR-7QErcAY/view?usp=sharing))
+- une base Neo4j en ligne (demander l'accès par mail à jm@validalab.fr)
 - Code python + flask (executer [mediasEntities.py](https://github.com/dataforgoodfr/batch9_validalab/blob/main/originalCode_JMG/mediasEntities.py) pour lancer l'app après avoir :
   - lancé la base
   - activé le virtual environment)
